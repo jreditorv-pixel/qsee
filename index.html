@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qsee – Text Quality Control</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f7f7fb;
+      color: #222;
+    }
+    header {
+      background: #5b3fd6;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    main {
+      padding: 24px;
+    }
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .file-box {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    button {
+      background: #5b3fd6;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    button.secondary {
+      background: #e6e3fb;
+      color: #5b3fd6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f0effa;
+    }
+    td[contenteditable="true"] {
+      background: #fafafa;
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-right: 6px;
+    }
+    .pass { background: #d4f8e8; color: #0f6d4c; }
+    .warn { background: #fff1c1; color: #7a5a00; }
+    .fail { background: #ffd6d6; color: #8a1f1f; }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Qsee</h1>
+  <span>Quality Control for Text Data</span>
+</header>
+
+<main>
+
+  <section>
+    <h2>1. Upload Files</h2>
+    <div class="file-box">
+      <p>Upload Excel or JSON files</p>
+      <input type="file" multiple />
+      <p style="font-size:12px;color:#666;">(All data stays on-premises)</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Merge Data (Compulsory)</h2>
+    <p>Select merge keys and preview merged output.</p>
+    <button>Preview Merge</button>
+    <button class="secondary">Apply Merge</button>
+  </section>
+
+  <section>
+    <h2>3. Edit Text Data</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Text</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td contenteditable="true">This are sample sentence.</td>
+          <td><span class="tag warn">Warning</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td contenteditable="true">This is a correct sentence.</td>
+          <td><span class="tag pass">Pass</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Run Quality Checks</h2>
+    <label><input type="checkbox" checked /> Grammar & Spelling</label><br />
+    <label><input type="checkbox" checked /> Duplication</label><br />
+    <label><input type="checkbox" checked /> Plagiarism</label><br />
+    <label><input type="checkbox" checked /> AI Detection</label><br /><br />
+    <button>Run Qsee Check</button>
+  </section>
+
+  <section>
+    <h2>5. Results Summary</h2>
+    <ul>
+      <li>Grammar errors: 1</li>
+      <li>Duplicate rows: 0</li>
+      <li>Plagiarism detected: 12%</li>
+      <li>AI probability: 35%</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Qsee • Free • On-Prem • Your data never leaves your system
+</footer>
+
+</body>
+</html>
